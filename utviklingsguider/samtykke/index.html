@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Med samtykke kan du be om lov til å hente data det offentlige har om en innbygger eller virksomhet. Du får da midlertidig innsynsrett på et spesifikt sett med opplysninger fra brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten.">
+    <meta name="description" content="Med samtykke/fullmakt kan du be om lov til å hente/dele data det offentlige har om en innbygger eller virksomhet, eller utføre noe på vegne av dem. Du får da midlertidig innsyns- eller handlingsrett på et spesifikt sett med opplysninger eller tjenester fra brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten.">
 
 
     
@@ -2755,7 +2755,7 @@ if(host != "localhost")
         
         ">
       <a href="/docs/utviklingsguider/samtykke/sluttbruker/aktivitetslogg/">
-        <span>Samtykkelogg</span>
+        <span>Avtalelogg</span>
 
         
 
@@ -9166,7 +9166,7 @@ if(host != "localhost")
                 Samtykke
                 
               </h1>
-              <p class="a-leadText" id="leadText">Med samtykke kan du be om lov til å hente data det offentlige har om en innbygger eller virksomhet. Du får da midlertidig innsynsrett på et spesifikt sett med opplysninger fra brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten.</p>
+              <p class="a-leadText" id="leadText">Med samtykke/fullmakt kan du be om lov til å hente/dele data det offentlige har om en innbygger eller virksomhet, eller utføre noe på vegne av dem. Du får da midlertidig innsyns- eller handlingsrett på et spesifikt sett med opplysninger eller tjenester fra brukeren. Dette kan for eksempel være ligningsdata fra Skatteetaten.</p>
             
           
 
@@ -9178,13 +9178,15 @@ if(host != "localhost")
 
 
 
-<p>Dataene kan hentes i ulike formater og enten via Altinn eller utenom. Se et eksempel på dataflyt i <a href="/docs/utviklingsguider/samtykke/eksempel/">Samtykkebasert lånesøknad</a>.</p>
-<p>Utvikling av en løsning for å ta i bruk samtykke involverer gjerne flere parter. Ønsker du å få tilgang til data du trenger i din saksbehandling må du gå i dialog med den etaten som har de dataene du trenger, slik at dere kan samarbeide om å lage en god løsning.</p>
-<p>Ved bruk av samtykke i Altinn er det tre parter:</p>
+<p>Dataene kan hentes/deles i ulike formater og enten via Altinn eller utenom. Se et eksempel på dataflyt i <a href="/docs/utviklingsguider/samtykke/eksempel/">Samtykkebasert lånesøknad</a>.</p>
+<p>Utvikling av en løsning for å ta i bruk samtykke involverer gjerne flere parter. Ønsker du å få tilgang til data du trenger i din saksbehandling må du gå i dialog med den etaten som har de dataene eller tilbyr de tjenestene du trenger, slik at dere kan samarbeide om å lage en god løsning.</p>
+<div class="notices info" >Denne guiden benytter for enkelhets skyld begrepet &ldquo;samtykke&rdquo;, men det støttes også bruk av begrepet &ldquo;fullmakt&rdquo; hvis det er påkrevd.</div>
+<p>Ved bruk av samtykke i Altinn er det som regel tre parter, men kan inneholde en fjerde:</p>
 <ul>
-<li><strong><a href="/docs/utviklingsguider/samtykke/datakilde/">Datakilde</a>:</strong> I de fleste sammenhenger har tjenesteeier (eier av samtykketjenesten) dataene lagret hos seg.</li>
-<li><strong><a href="/docs/utviklingsguider/samtykke/datakonsument/">Datakonsument</a></strong>: Den som trenger tilgang til data for å bruke dem i sine egne prosesser.</li>
-<li><strong><a href="/docs/utviklingsguider/samtykke/sluttbruker/">Sluttbruker</a></strong>: Den som eier dataene og som kan gi samtykke til at datakilden kan dele data om dem med datakonsumenten.<br><br></li>
+<li><strong><a href="https://altinn.github.io/docs/utviklingsguider/samtykke/datakilde/">Datakilde</a>:</strong> I de fleste sammenhenger har tjenesteeier (eier av samtykketjenesten) dataene lagret hos seg.</li>
+<li><strong><a href="https://altinn.github.io/docs/utviklingsguider/samtykke/datakonsument/">Datakonsument</a></strong>: Den som trenger tilgang til data for å bruke dem i sine egne prosesser.</li>
+<li><strong><a href="https://altinn.github.io/docs/utviklingsguider/samtykke/sluttbruker/">Sluttbruker</a></strong>: Den som eier dataene og som kan gi samtykke til at datakilden kan dele data om dem med datakonsumenten.</li>
+<li><strong><a href="https://altinn.github.io/docs/utviklingsguider/samtykke/datakonsument/leverandor/">Leverandør</a></strong>: Part som foretar teknisk integrasjon og er databehandler på vegne av datakonsumenten.<br><br></li>
 </ul>
 <p>Slik går du frem:</p>
 <ol>
@@ -11267,8 +11269,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
           
                               
-                                  
-                      
                       
                   
                               
@@ -11331,6 +11331,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                      
+                  
                               
                       
                   
@@ -11378,9 +11381,7 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
@@ -11393,27 +11394,25 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
                               
-                                  
                       
-                      
-                          
-                              
-                          
-                          
-          
-                              
+                  
                               
+                      
+                  
                               
-          
+                                  
+                      
+                      
+                  
                               
+                                  
                       
+                      
                   
                               
                       
@@ -11427,13 +11426,12 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
+                              
                               
+                                  
                               
                               
           
-                              
-                      
-                  
                               
                                   
                       
@@ -11467,9 +11465,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                       
                   
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -11493,12 +11488,13 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
+                              
+                      
+                  
                               
                                   
                       
@@ -11516,9 +11512,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                       
                   
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -11531,11 +11524,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                                  
-                      
-                      
-                  
                               
                       
                   
@@ -11553,9 +11541,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
           
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -11615,12 +11600,13 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
+                              
+                      
+                  
                               
                                   
                       
@@ -11670,6 +11656,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                       
                   
                               
+                      
+                  
+                              
                                   
                       
                       
@@ -11682,9 +11671,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                                   
                       
@@ -11711,12 +11697,13 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
           
                               
-                              
-                                  
                               
                               
           
                               
+                      
+                  
+                              
                                   
                       
                       
@@ -11729,12 +11716,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
-                              
-                      
-                  
                               
                       
                   
@@ -11766,9 +11747,7 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
@@ -11817,9 +11796,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
@@ -11852,26 +11828,10 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
                               
-          
-                              
                                   
                       
                       
@@ -11884,21 +11844,8 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                  
                               
-                                  
                       
-                      
                   
                               
                       
@@ -11959,12 +11906,13 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
+                              
+                      
+                  
                               
                                   
                       
@@ -12027,8 +11975,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
           
                               
-                                  
-                      
                       
                   
                               
@@ -12123,9 +12069,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
@@ -12138,12 +12081,16 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
+                              
+                      
+                  
+                              
+                      
+                  
                               
                                   
                       
@@ -12172,9 +12119,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
@@ -12227,9 +12171,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                       
                   
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -12238,12 +12179,13 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
+                              
+                      
+                  
                               
                                   
                       
@@ -12255,10 +12197,11 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
           
                               
                               
-                                  
-                              
                               
           
+                              
+                      
+                  
                               
                                   
                       
@@ -12272,6 +12215,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                      
+                  
                               
                       
                   
@@ -12279,6 +12225,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                       
                   
                               
+                      
+                  
+                              
                                   
                       
                       
@@ -12287,7 +12236,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
+                              
                               
+                                  
                               
                               
           
@@ -12295,8 +12246,16 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                                   
                       
                       
-                  
+                          
+                              
+                          
+                          
+          
+                              
                               
+                              
+          
+                              
                       
                   
                               
@@ -12360,9 +12319,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
@@ -12376,8 +12332,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
           
                               
-                              
-                                  
                               
                               
           
@@ -12472,10 +12426,11 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
           
                               
                               
-                                  
-                              
                               
           
+                              
+                      
+                  
                               
                                   
                       
@@ -12489,16 +12444,10 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -12526,13 +12475,12 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
+                              
                               
+                                  
                               
                               
           
-                              
-                      
-                  
                               
                                   
                       
@@ -12547,9 +12495,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
           
                               
-                      
-                  
-                              
                                   
                       
                       
@@ -12610,6 +12555,15 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                      
+                  
+                              
+                      
+                  
+                              
+                      
+                  
                               
                       
                   
@@ -12624,11 +12578,10 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
           
                               
                               
+                                  
                               
-          
                               
-                      
-                  
+          
                               
                                   
                       
@@ -12654,16 +12607,12 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
                               
-          
+                                  
                               
-                      
-                  
                               
-                      
-                  
+          
                               
                                   
                       
@@ -12677,6 +12626,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                      
+                  
                               
                                   
                       
@@ -12704,11 +12656,10 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
           
                               
                               
+                                  
                               
-          
                               
-                      
-                  
+          
                               
                                   
                       
@@ -12738,6 +12689,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                      
+                  
                               
                       
                   
@@ -12752,11 +12706,10 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
           
                               
                               
+                                  
                               
-          
                               
-                      
-                  
+          
                               
                                   
                       
@@ -12791,6 +12744,11 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                                  
+                      
+                      
+                  
                               
                                   
                       
@@ -12804,6 +12762,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                      
+                  
                               
                       
                   
@@ -12912,12 +12873,13 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
                               
                               
           
+                              
+                      
+                  
                               
                                   
                       
@@ -12977,11 +12939,10 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
           
                               
                               
+                                  
                               
-          
                               
-                      
-                  
+          
                               
                                   
                       
@@ -12995,6 +12956,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                      
+                  
                               
                       
                   
@@ -13011,9 +12975,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
@@ -13045,6 +13006,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
+                              
+                      
+                  
                               
                       
                   
@@ -13065,6 +13029,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                       
                   
                               
+                      
+                  
+                              
                                   
                       
                       
@@ -13073,13 +13040,12 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
+                              
                               
+                                  
                               
                               
           
-                              
-                      
-                  
                               
                                   
                       
@@ -13107,85 +13073,10 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
           
                               
                               
+                                  
                               
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
                               
-                              
           
-                              
-                                  
-                      
-                      
-                  
                               
                                   
                       
@@ -13195,28 +13086,12 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
-                              
-                                  
-                              
                               
-          
                               
                                   
-                      
-                      
-                          
-                              
-                          
-                          
-          
                               
                               
-                              
           
-                              
-                      
-                  
                               
                                   
                       
@@ -13249,19 +13124,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
                               
                       
                   
@@ -13278,43 +13140,10 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
                               
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
                                   
                       
                       
@@ -13327,42 +13156,13 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
                               
-          
-                              
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
                               
-                              
-          
-                              
                       
                   
                               
@@ -13408,31 +13208,12 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                           
                           
           
-                              
                               
-                                  
-                              
-                              
-          
                               
                                   
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
                               
                               
           
-                              
-                      
-                  
-                              
-                      
-                  
                               
                                   
                       
@@ -13446,14 +13227,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                                  
-                      
-                      
-                  
-                              
-                      
-                  
                               
                                   
                       
@@ -13515,27 +13288,9 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
                               
                                   
                       
@@ -13616,22 +13371,7 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
                               
-                              
-          
-                              
                                   
                       
                       
@@ -13644,12 +13384,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
-                              
-                      
-                  
                               
                       
                   
@@ -13685,9 +13419,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                                   
                       
@@ -13736,19 +13467,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                       
                   
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
                               
                                   
                       
@@ -13874,9 +13592,6 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
                               
                               
           
-                              
-                      
-                  
                               
                       
                   
@@ -13891,1625 +13606,8 @@ Hvis du jobber for en bank, forsikringsselskap eller lignende og ønsker å hent
           
                               
                               
-                                  
-                              
                               
           
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                                  
-                              
-                              
-          
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                      
-                  
-                              
-                                  
-                      
-                      
-                          
-                              
-                          
-                          
-          
-                              
-                              
-                              
-          
-                              
-                      
-                  
                               
                       
                   
